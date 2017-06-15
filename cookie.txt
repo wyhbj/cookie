@@ -1,4 +1,4 @@
- cookie:
+﻿cookie:
       储存在用户本地终端上的数据（简单理解为，一个特殊的自定义属性，浏览器能跟踪到）
       主要用来辨别用户身份、进行 session 跟踪的一个数据。    
       大多数浏览器体积很小，可以说字字千金，最新的chrome/Safari貌似没有cookie限制 
@@ -9,8 +9,7 @@
         默认情况下，生命周期为关闭浏览器之前。（关闭浏览器生命结束）
       设置生命周期：
         可以通过expires来设置生命周期
-
- function setCookie(key,value,time){
+function setCookie(key,value,time){
     if(time){
       var date = new Date();
       date.setDate(date.getDate()+time);
@@ -18,24 +17,18 @@
     }else{
       document.cookie = key+'='+value;
     }
-  }
-
-  
- setCookie('name','王皓');
-
- //删除cookie就是设置一个cookie，让它的生命周期-1
+}
+setCookie('name','王皓');
+//删除cookie就是设置一个cookie，让它的生命周期-1
       function removeCookie(key,value){
         setCookie(key,value,-1);
       }
-     
-      
       document.onclick = function(){
         removeCookie('name','王皓');
       }
       
-      let arr = ['yaoniansong','孙国庆','赖晴','王镇'];
-      
-      for(var i=0;i<arr.length;i++){
+   let arr = ['yaoniansong','孙国庆','赖晴','王镇'];
+       for(var i=0;i<arr.length;i++){
         if(arr[i] === getCookie('name')){
           btn.className = 'hide';
           title.className = '';
@@ -46,15 +39,12 @@
           title.className = 'hide';
         }
       }
-      
       btn.onclick = function(){
         setCookie('name',txt.value);
         window.location.reload();
       }
-      
-      类似登录
-      
-      function setCookie（key，value，time）{
+      类似登录
+    function setCookie（key，value，time）{
         if(time){
           var date = new Date();
           date.setDate(date.getDate()+time);
@@ -63,8 +53,7 @@
           document.cookie = key+'='+value;
         }
       }
-      
-      function getCookie(name){
+       function getCookie(name){
         let arr = document.cookie.split('; ');
         let valSting = '';
         arr.forEach((e,i)=>{
@@ -76,7 +65,6 @@
         });
         return valSting;
       }
-      
       //删除cookie就是设置一个cookie，让它的生命周期-1
       function removeCookie(key,value){
         setCookie(key,value,-1);
